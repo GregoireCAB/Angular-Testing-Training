@@ -5,6 +5,7 @@
         (click)="toggleAll()"
         class="todoList__headerCheckbox"
         [checked]="(areAllCompleted$ | async) || false"
+        data-cy="masterCheckbox"
       ></app-checkbox>
     </div>
     <div class="todoList__headerCenter">
@@ -14,6 +15,7 @@
         [formControl]="inputCtrl"
         placeholder="Quelle est la prochaine tâche ?"
         (keydown.enter)="onEnter()"
+        data-cy="input"
       />
     </div>
   </div>

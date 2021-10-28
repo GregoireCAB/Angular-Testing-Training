@@ -2,6 +2,7 @@
   class="todoListItem"
   [class.todoListItem--completed]="item.completed"
   *ngIf="item"
+  data-cy="item"
 >
   <div class="todoListItem__heading">
     <app-checkbox
@@ -9,6 +10,7 @@
       class="todoListItem__checkbox"
       [class.todoListItem__checkbox--checked]="item.completed"
       [checked]="item.completed"
+      data-cy="itemCheckbox"
     ></app-checkbox>
   </div>
   <div class="todoListItem__body">{{ item.text }}</div>
@@ -16,6 +18,7 @@
     <svg
       (click)="remove()"
       class="todoListItem__deleteIcon"
+      data-cy="removeItem"
       xmlns="http://www.w3.org/2000/svg"
       version="1.0"
       width="512.000000pt"

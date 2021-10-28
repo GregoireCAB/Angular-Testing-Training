@@ -23,7 +23,7 @@ interface TodoStateModel {
 @State<TodoStateModel>({
   name: 'todo',
   defaults: {
-    items: [{ id: 1, text: 'Coucou les amis', completed: false }],
+    items: [],
   },
 })
 @Injectable()
@@ -35,7 +35,10 @@ export class TodoState {
 
   @Selector([TodoState.items])
   public static areAllCompleted(items: TodoItem[]): boolean {
-    console.log(items);
+    if (items.length < 1) {
+      return false;
+    }
+
     for (const item of items) {
       if (!item.completed) {
         return false;
