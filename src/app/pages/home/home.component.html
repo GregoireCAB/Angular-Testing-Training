@@ -1,0 +1,8 @@
+<div class="home">
+  <div class="home__todoList">
+    <app-todo-list
+      *ngIf="items$ | async as items"
+      [items]="items"
+    ></app-todo-list>
+  </div>
+</div>

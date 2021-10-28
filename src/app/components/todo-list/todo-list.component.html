@@ -1,0 +1,30 @@
+<div class="todoList">
+  <div class="todoList__header">
+    <div class="todoList__headerHeading">
+      <app-checkbox
+        (click)="toggleAll()"
+        class="todoList__headerCheckbox"
+        [checked]="(areAllCompleted$ | async) || false"
+      ></app-checkbox>
+    </div>
+    <div class="todoList__headerCenter">
+      <input
+        class="todoList__headerInput"
+        type="text"
+        [formControl]="inputCtrl"
+        placeholder="Quelle est la prochaine tâche ?"
+        (keydown.enter)="onEnter()"
+      />
+    </div>
+  </div>
+
+  <div class="todoList__items">
+    <app-todo-list-item
+      class="todoList__item"
+      *ngFor="let item of items; trackBy: trackById"
+      [item]="item"
+    ></app-todo-list-item>
+  </div>
+
+  <div class="todoList__footer"></div>
+</div>

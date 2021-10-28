@@ -1,0 +1,23 @@
+:host {
+  display: inline-block;
+}
+
+.checkbox {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  &__rect {
+    stroke: #ccc;
+    stroke-width: 1px;
+
+    &--checked {
+      fill: #5dad98;
+      stroke: none;
+    }
+  }
+
+  &__tick {
+    fill: #fff;
+  }
+}
