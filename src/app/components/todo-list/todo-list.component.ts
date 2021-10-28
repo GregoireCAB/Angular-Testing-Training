@@ -1,12 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  Inject,
-  Input,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
@@ -26,7 +18,6 @@ import { TodoState } from 'src/app/stores/todo/todo.state';
 export class TodoListComponent implements OnInit {
   @Select(TodoState.areAllCompleted) areAllCompleted$!: Observable<boolean>;
 
-  @Input() title!: string;
   @Input() items: TodoItem[] = [];
 
   inputCtrl = new FormControl();
